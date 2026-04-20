@@ -68,7 +68,7 @@ const TA = ({ label, value, onChange, rows = 7 }) => (
 );
 
 const Toggle = ({ value, onChange, label }) => (
-  <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:10, padding:'9px 12px', background:'#060e1c', borderRadius:7, border:'1px solid #1a3050' }}>
+  <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:10, padding:'9px 12px', background:'T.bg', borderRadius:7, border:'1px solid #1a3050' }}>
     <span style={{ fontSize:13, color:'#94a3b8' }}>{label}</span>
     <div onClick={() => onChange(!value)} style={{ width:38, height:21, borderRadius:11, background: value ? '#2563eb' : '#1a3050', cursor:'pointer', position:'relative', transition:'background .2s', flexShrink:0 }}>
       <div style={{ position:'absolute', top:2.5, left: value ? 18 : 2.5, width:16, height:16, borderRadius:8, background:'#fff', transition:'left .2s' }} />
