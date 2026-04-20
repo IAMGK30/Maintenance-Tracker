@@ -1,5 +1,5 @@
 // api.js – typed API client for the TaskEscalate backend
-const BASE = '/api';
+const BASE = 'https://maintenance-tracker-3odh.onrender.com/api';
 
 const req = async (method, path, body, isForm = false) => {
   const opts = {
