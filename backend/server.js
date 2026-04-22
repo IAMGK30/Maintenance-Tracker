@@ -27,15 +27,6 @@ app.use(express.urlencoded({ extended: true }));
 // ── API routes ────────────────────────────────────────────────────────────────
 app.use('/api', routes);
 
-// ── Serve React frontend in production ───────────────────────────────────────
-if (process.env.NODE_ENV === 'production') {
-  const frontendBuild = path.join(__dirname, '../frontend/dist');
-  app.use(express.static(frontendBuild));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendBuild, 'index.html'));
-  });
-}
-
 // ── Global error handler ──────────────────────────────────────────────────────
 app.use((err, req, res, next) => {
   console.error('[Error]', err);
