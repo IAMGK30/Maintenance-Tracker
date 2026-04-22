@@ -3,12 +3,17 @@ require('dotenv').config();
 const express = require('express');
 const cors    = require('cors');
 const path    = require('path');
-
+const mongoose = require('mongoose');
 const routes    = require('./routes');
 const { startScheduler } = require('./scheduler');
 
 const app  = express();
 const PORT = process.env.PORT || 3001;
+
+mongoose.connect(process.env.MONGO_URI)    
+    .then(() =>console.log("MongoDB Connected"))
+    .catch(err => console.log("MongoDB Error:",err));
+
 
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
