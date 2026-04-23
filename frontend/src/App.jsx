@@ -281,7 +281,14 @@ function TaskModal({ init, onSave, onClose }) {
   const submit = async () => {
     if (!ok()) return;
     setSaving(true);
-    try { await onSave(f); } finally { setSaving(false); }
+    try { 
+      console.log("Sending to backend:",f):// debug
+         await api.createTask(f);// THIS IS FIX 
+    }  catch (err) { 
+      console.error(err);
+    } finally {
+      setSaving(false);
+    }
   };
 
   const fi = (label, key, type='text', required) => (
