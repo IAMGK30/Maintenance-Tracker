@@ -282,8 +282,8 @@ function TaskModal({ init, onSave, onClose }) {
     if (!ok()) return;
     setSaving(true);
     try { 
-      console.log("Sending to backend:",f):// debug
-         await api.createTask(f);// THIS IS FIX 
+      console.log("Sending to backend:",f);
+         await api.createTask(f);
     }  catch (err) { 
       console.error(err);
     } finally {
