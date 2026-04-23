@@ -275,6 +275,7 @@ function TaskModal({ init, onSave, onClose }) {
     if (!f.name.trim()) e.name = 'Required';
     if (!f.dueDate) e.dueDate = 'Required';
     if (!f.concernedEmail.trim()) e.concernedEmail = 'Required';
+console.log("validation:",e);
     setErr(e); return !Object.keys(e).length;
   };
 
